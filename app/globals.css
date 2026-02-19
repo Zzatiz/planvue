@@ -1,26 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: #07070d;
+  --color-surface: #09090f;
+  --color-surface-el: #0f0f1a;
+  --color-border: #14141f;
+  --color-border-bright: #1e1e2e;
+  --color-accent-warm: #e8a87c;
+  --color-accent-purple: #c084fc;
+  --color-accent-green: #4ade80;
+  --color-accent-red: #f87171;
+  --color-accent-yellow: #fbbf24;
+  --color-text-primary: #f0f0f8;
+  --color-text-secondary: #8888aa;
+  --color-text-muted: #5a5a7a;
+  --color-tier-platinum: #e0c8ff;
+  --color-tier-vip: #ffcf86;
+  --color-tier-gold: #ffd700;
+  --color-tier-silver: #c0c0d0;
+  --color-tier-bronze: #cd7f5a;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-display: 'Playfair Display', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #07070d;
+  color: #f0f0f8;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a3e;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a5e;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scoreRing {
+  from {
+    stroke-dashoffset: 283;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 200ms ease-out forwards;
+}
+
+.animate-spin-slow {
+  animation: spin 1.2s linear infinite;
+}
+
+.animate-score-ring {
+  animation: scoreRing 600ms ease forwards;
 }
