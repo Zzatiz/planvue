@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-bg: #07070d;
@@ -23,6 +26,24 @@
   --font-sans: 'DM Sans', sans-serif;
   --font-mono: 'DM Mono', monospace;
   --font-display: 'Playfair Display', serif;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --color-background: #07070d;
+  --color-foreground: #f0f0f8;
+  --color-card: #09090f;
+  --color-card-foreground: #f0f0f8;
+  --color-primary: #e8a87c;
+  --color-primary-foreground: #07070d;
+  --color-secondary: #1e1e2e;
+  --color-secondary-foreground: #f0f0f8;
+  --color-muted: #14141f;
+  --color-muted-foreground: #5a5a7a;
+  --color-destructive: #f87171;
+  --color-border: #14141f;
+  --color-input: #14141f;
+  --color-ring: #e8a87c;
 }
 
 * {
@@ -78,6 +99,11 @@ body {
   }
 }
 
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
 .animate-fade-up {
   animation: fadeUp 200ms ease-out forwards;
 }
@@ -88,4 +114,8 @@ body {
 
 .animate-score-ring {
   animation: scoreRing 600ms ease forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
 }
